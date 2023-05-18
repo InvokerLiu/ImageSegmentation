@@ -7,19 +7,19 @@ using namespace std;
 
 int main()
 {
-	CPLSetConfigOption("GDAL_DATA", "E:\\ProgramFile\\CppLib\\gdal242_64\\data");
+	CPLSetConfigOption("GDAL_DATA", "./gdal242_64/data");
 	clock_t startTime, endTime;
 	startTime = clock();
 	ObjectSegmentation seg;
-	string sInputImageFile = "D:\\SegTest\\Image.tif";
+	string sInputImageFile = "./TestData/Image.tif";
 	string sRGBFile = "";
-	string sThematicFile = "D:\\SegTest\\road.tif";
-	string sOutputFile = "D:\\SegTest\\SegResult.tif";
+	string sThematicFile = "./TestData/road.tif";
+	string sOutputFile = "./TestData/SegResult.tif";
 
 	seg.SetParam(30, 0.5f, 0.9f);
 	string sInfo = seg.Execute(sInputImageFile, sOutputFile, sRGBFile, sThematicFile);
 	
 	endTime = clock();
-	cout << "分割用时" << double(endTime - startTime) / CLOCKS_PER_SEC << "秒" << endl;
+	cout << "路脰赂卯脫脙脢卤" << double(endTime - startTime) / CLOCKS_PER_SEC << "脙毛" << endl;
 	return 0;
 }
